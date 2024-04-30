@@ -16,17 +16,23 @@
 // Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
 
-const prices = [7, 1, 5, 3, 6, 4];
+const prices = [1, 2];
 
 var maxProfit = function (prices) {
-  let max = 0;
+  let minPrice = prices[0];
+  let maxprofit = 0;
+
   for (let i = 0; i < prices.length; i++) {
-    profit = prices[i + 1] - prices[i];
-    if (profit > max) {
-      max = profit;
+    if (prices[i] <= minPrice) {
+      minPrice = prices[i];
+    }
+
+    if (prices[i] - minPrice > maxprofit) {
+      maxprofit = prices[i] - minPrice;
     }
   }
-  console.log(max);
+
+  console.log(maxprofit);
 };
 
 maxProfit(prices);
