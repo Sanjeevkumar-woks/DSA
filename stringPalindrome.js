@@ -19,7 +19,7 @@
 // Explanation: s is an empty string "" after removing non-alphanumeric characters.
 // Since an empty string reads the same forward and backward, it is a palindrome.
 
-Input: s = "";
+Input: s = "A man, a plan, a canal: Panama";
 var isPalindrome = function (s) {
   if (!s.length) {
     console.log(false);
